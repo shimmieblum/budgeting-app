@@ -1,0 +1,68 @@
+# Python backend
+  # Python files
+  *.pyc
+  *.pyo
+  __pycache__/
+
+  # Python test files
+  *.pyt
+  *.pyttest
+
+  # Python package files
+  .egg-info/
+  .dist-info/
+  build/
+  dist/
+
+  # Virtual environment
+  .venv/
+  venv/
+  env/
+
+  # Local configuration files
+  /backend/.env
+  backend/.env.*
+
+  # Generated files
+  *.log
+  *.out
+  *.txt
+
+  # Data files (if applicable)
+  data/
+
+# React TypeScript frontend
+frontend/
+  # Node modules
+  node_modules/
+
+  # Build artifacts
+  build/
+
+  # IDE files
+  .vscode/
+
+  # Editor configuration files
+  .eslintrc.js 
+  .prettierrc.js 
+
+  # TypeScript compilation output
+  dist/
+
+  # Temporary files
+  *~
+
+# General
+.vscode/
+.idea/
+.project
+.pydevproject
+
+# Large media files (if applicable)
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.svg
+*.mp4
+*.wav

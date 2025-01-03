@@ -1,0 +1,58 @@
+# Python files
+*.pyc
+*.pyo
+__pycache__/
+
+# Python test files
+*.pyt
+*.pyttest
+
+# Python package files
+.egg-info/
+.dist-info/
+build/
+dist/
+
+# Jupyter Notebook files
+.ipynb_checkpoints/
+
+# IDE files
+.vscode/
+.idea/
+.project
+.pydevproject
+
+# Virtual environment
+.venv/
+venv/
+env/
+
+# Local configuration files
+.env
+.env.*
+
+# Generated files
+*.log
+*.out
+*.txt
+
+# Data files
+*.csv
+*.json
+*.xml
+*.parquet
+
+# Large datasets
+data/
+
+# Media files
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.svg
+*.mp4
+*.wav
+
+# Temporary files
+*~
