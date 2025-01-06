@@ -3,25 +3,12 @@ from flask import Flask, request, jsonify
 from transformers import pipeline
 from dotenv import load_dotenv
 from flask_cors import CORS
-
-from ..models.geminiModelWrapper import GeminiWrapper
+from .models.llms import use_gemini
 
 load_dotenv()
 
 app = Flask(__name__)
 CORS(app)
-HUGGING_FACE_TOKEN = os.getenv('HF_TOKEN')
-
-model = GeminiWrapper('gemini-1.5-flash-002')
-
-if not HUGGING_FACE_TOKEN: 
-    raise ValueError('HUGGING_FACE_TOKEN not defined')
-
-try:
-    generator = pipeline('text-generation', model='gpt2', token=HUGGING_FACE_TOKEN)
-except Exception as e:
-    print(f'Error initializing pipeline: {e}')
-    exit(1)
 
 @app.post('/api/chat')
 def chat():
@@ -30,11 +17,11 @@ def chat():
         print(user_message)
         if not user_message:
             return jsonify({'error': 'No message sent'}), 400
-        bot_response = model.get_response(user_message) 
+        bot_response = use_gemini(user_message, 'gemini-2-flash-exp') 
         
         # generator(user_message, max_length=150, num_return_sequences=1)
         print(bot_response)
-        return jsonify({'response': bot_response[0]['generated_text']})
+        return jsonify({'response': bot_response.content})
     except Exception as e:
         print(f'chatbot error: {e}')
         return jsonify({'error': 'an error occured'}), 500
@@ -44,8 +31,8 @@ def chat():
 def getChat():
     try:
         user_message  = 'hi there, how are yoU?'
-        bot_response = model.get_response(user_message) 
-        return jsonify({'response': bot_response})
+        bot_response = use_gemini(user_message) 
+        return jsonify({'response': bot_response.content})
     except Exception as e: 
         print(f'error: {e}')
         return jsonify({'error': 'error'}), 500
