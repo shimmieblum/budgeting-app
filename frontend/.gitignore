@@ -1,0 +1,60 @@
+# General OS files
+.DS_Store
+Thumbs.db
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json # Only if using npm. If using yarn, keep yarn.lock
+yarn.lock # Only if using yarn. If using npm, keep package-lock.json
+
+# IDEs and Editors
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+
+# Build artifacts
+build/
+dist/
+coverage/
+.parcel-cache/ # Parcel bundler cache
+.cache/ # General cache directory
+
+# Environment files (sensitive data - VERY IMPORTANT)
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*~
+*.bak
+
+# Optional: If you use a specific testing library
+# Example for Jest:
+jest-cache/
+
+# Optional: If you use a specific bundler/build tool
+# Example for Vite:
+dist/*
+.vite/
+
+# Optional: If you use storybook
+.storybook/dist
+
+# Optional: If using pnpm
+pnpm-lock.yaml
+
+# Optional: If using turborepo
+.turbo/
