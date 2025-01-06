@@ -19,10 +19,6 @@
   height: 80vh;
 }
 
-.oops {
-  ''
-}
-
 .message-list {
   flex-grow: 1; /* Allow messages to take up available space */
   padding: 10px;
