@@ -3,7 +3,7 @@ from flask import Flask, request, jsonify
 from transformers import pipeline
 from dotenv import load_dotenv
 from flask_cors import CORS
-from .models.llms import use_gemini
+from ..ai.llms import use_gemini
 
 load_dotenv()
 
